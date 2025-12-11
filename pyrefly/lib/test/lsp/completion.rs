@@ -1313,7 +1313,7 @@ foo("
 Completion Results:
 - (Value) 'a\nb': Literal['a\nb'] inserting `a
 b`"#
-        .trim(),
+            .trim(),
         report.trim(),
     );
 }
@@ -1462,7 +1462,7 @@ foo(''
          ^
 Completion Results:
 - (Value) 'foo': Literal['foo'] inserting `foo`
-- (Value) 1: Literal[1] inserting `1`
+- (Value) 1: Literal[1]
 "#
         .trim(),
         report.trim(),
