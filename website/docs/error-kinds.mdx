@@ -1208,6 +1208,22 @@ def takes_kwonly(*, x: int) -> int:
 takes_kwonly(1)  # should be `takes_kwonly(x=1)`!
 ```
 
+## unimported-assert-type
+
+Attempting to call `assert_type` without importing it from `typing` first.
+
+```python
+assert_type(1, int)  # error
+```
+
+## unimported-reveal-type
+
+Attempting to call `reveal_type` without importing it from `typing` first.
+
+```python
+reveal_type(1)  # error
+```
+
 ## unknown-name
 
 `unknown-name` occurs when attempting to load a name from another scope, but the name cannot be found.

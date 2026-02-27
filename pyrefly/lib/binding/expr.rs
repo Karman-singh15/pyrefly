@@ -376,9 +376,14 @@ impl<'a> BindingsBuilder<'a> {
                     .scopes
                     .suggest_similar_name(&name.id, name.range.start());
                 if is_special_name(name.id.as_str()) {
+                    let error_kind = if name.id.as_str() == "reveal_type" {
+                        ErrorKind::UnimportedRevealType
+                    } else {
+                        ErrorKind::UnimportedAssertType
+                    };
                     self.error(
                         name.range,
-                        ErrorInfo::Kind(ErrorKind::UnknownName),
+                        ErrorInfo::Kind(error_kind),
                         format!(
                             "`{}` must be imported from `typing` for runtime usage",
                             name
