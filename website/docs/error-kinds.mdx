@@ -1208,20 +1208,13 @@ def takes_kwonly(*, x: int) -> int:
 takes_kwonly(1)  # should be `takes_kwonly(x=1)`!
 ```
 
-## unimported-assert-type
+## unimported-directive
 
-Attempting to call `assert_type` without importing it from `typing` first.
-
-```python
-assert_type(1, int)  # error
-```
-
-## unimported-reveal-type
-
-Attempting to call `reveal_type` without importing it from `typing` first.
+Attempting to call a [type checker directive](https://typing.python.org/en/latest/spec/directives.html#type-checker-directives) without importing it from `typing` first.
 
 ```python
 reveal_type(1)  # error
+assert_type(1, int)  # error
 ```
 
 ## unknown-name
